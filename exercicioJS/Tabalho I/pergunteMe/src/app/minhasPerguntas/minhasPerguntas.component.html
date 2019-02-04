@@ -1,0 +1,28 @@
+
+<div class="row" *ngFor="let p of perguntas">
+  <div class="row">
+      <div class="col s12">
+          Em {{p.dataPergunta | date:'dd/MM/yyyy'}} às  {{p.dataPergunta | date:'HH:mm'}}, eu perguntei para <a routerLink='../profile/{{p.destinatario.login}}'> @{{p.destinatario.nome}} </a> : 
+      </div>    
+  </div>
+  <div class="row">
+      <div class=" row col s12" style="text-align: center">
+          
+          <h4>{{p.descricao}}</h4>
+      </div>
+   </div>
+   <div class="row">
+        <div class="col s12">
+            Resposta em {{p.dataResposta | date:'dd/MM/yyyy'}} às  {{p.dataResposta | date:'HH:mm'}} <!--, <a routerLink='../profile/{{p.destinatario.login}}' > @{{p.destinatario.nome}}</a> respondeu: -->
+        </div>    
+    </div>
+    <div class="row">
+        <div class=" row col s12" style="text-align: center">
+
+           <div class=" row col s12" style="text-align: center">
+              <h4>{{p.resposta}}</h4>
+           </div>      
+        </div>   
+    </div>
+    <hr/>
+</div>

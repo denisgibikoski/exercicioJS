@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+.w3-circle{border-radius:50%}
+
+hr{
+    border-color:rgb(36, 34, 34);
+    box-sizing:border-box;
+    background-color: #f00;
+    align:center;
+    height: 10px;
+    width:85%;  
+  }
+
+.form_cadastro{
+    width: 1000px; 
+    margin: 0 auto; 
+    background-color: #fff; 
+    padding: 10px; 
+    border-radius: 10px;
+    color: #666666
+}

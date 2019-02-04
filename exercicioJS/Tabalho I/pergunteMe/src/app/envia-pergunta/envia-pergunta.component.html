@@ -1,0 +1,65 @@
+<div class="bg_novo_user">
+  <div class="valign-wrapper fullsize">
+
+      <div class="valign z-depth-1 form_cadastro">
+          <div class="row">
+              <div class="col s12" style="text-align : center">
+                  <h5>Pergunte.me | Nova Pergunta</h5>
+              </div>
+          </div>
+          <div class="row col s12" >
+              
+
+              <div class="input-field col s12">
+              <form class="col s12" #formRegistro="ngForm">
+
+                  <div class="row">
+                      <div class="input-field col s8">
+                          <label>Destinatario</label><br/>
+                          <select class="browser-default" name="destinatario" #destinatario='ngModel' [(ngModel)]="pergunta.destinatario" required>
+                              <option disabled selected>Destino</option>
+                              <option *ngFor="let u of usuarios" value="{{u._id}}">
+                                  {{u.nome}}
+                              </option>
+                          </select>
+                          <small class="red-text" *ngIf="destinatario.invalid && destinatario.touched">Campo Obrigatorio</small>  
+                      </div>
+                  </div>
+
+
+                  <div class="input-field col s12">
+                      <textarea name="descricao" id="descricao" maxlength="500" class="materialize-textarea" [(ngModel)]="pergunta.descricao" #descricao='ngModel' required ></textarea>
+                      <label for="descricao"> Escreva sua pergunta</label> <br/> 
+                      <small class="red-text" *ngIf="descricao.invalid && descricao.touched">Campo Obrigatorio</small>           
+                  </div>      
+                    
+              </form>
+              </div>
+              </div>
+              <div class="row">
+                  <div class="col s6">
+                      <button class="btn btn-large waves-effect waves-light grey darken-3" 
+                          style="width: 100%" [disabled]="formRegistro.invalid"
+                          (click)="salvar()">
+                          Salvar
+                      </button>
+                  </div>
+                  <div class="col s6">
+                      <button class="btn btn-large waves-effect waves-light grey lighten-3 grey-text text-darken-1" 
+                          style="width: 100%" (click)="cancelar()"> Cancelar</button>
+                  </div>
+              </div>
+          </div>
+  
+      </div>
+  
+  </div>
+
+
+
+
+
+
+           
+
+             
