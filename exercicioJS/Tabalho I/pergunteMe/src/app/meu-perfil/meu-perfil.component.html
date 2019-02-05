@@ -4,7 +4,7 @@
         <div class="valign z-depth-1 form_cadastro">
              <div class="row">
                 <div class="col s12" style="text-align : center">
-                    <h5>Pergunte.me | Meu Perfil</h5>
+                    <h5>qual.eH | Perfil</h5>
                 </div>
             </div>
             <form  class="col s12" #formRegistro="ngForm">
@@ -46,7 +46,7 @@
                         </div>
                     
                         <div class="input-field col s12">
-                            <label for="bio"> Escreva algo sobre você</label>
+                            <label for="bio"> Escreva sobre você</label>
                             <textarea name="bio" id="bio" maxlength="500" class="materialize-textarea" [(ngModel)]="usuario.bio" #bio='ngModel' required ></textarea>
                             <small class="red-text" *ngIf="bio.invalid && bio.touched">Campo Obrigatorio</small>           
                         </div>        

@@ -13,7 +13,7 @@ exports.listar = (usuario, fnCallback) => {
     let u  = new Usuario(usuario);
 
     if(mostraMsg)
-        console.log('Veio listar por USUARIO ' + u._id)
+        console.log('Listar por USUARIO ' + u._id)
 
     let q = Pergunta.find({ destinatario : u, resposta : null})
     q.sort('-dataPergunta')
@@ -31,7 +31,7 @@ exports.listaRespondidas = (usuario, fnCallback) => {
     let u  = new Usuario(usuario);
 
     if(mostraMsg)
-        console.log('Veio listar Respondidas ' + u._id)
+        console.log('Listar Respondidas ' + u._id)
 
     let q = Pergunta.find({ remetente : u, resposta : /^/})
     q.sort('-dataPergunta')
@@ -49,7 +49,7 @@ exports.listaRecebidas = (usuario, fnCallback) => {
     let u  = new Usuario(usuario);
 
     if(mostraMsg)
-        console.log('Veio listar Recebidas ' + u.login)
+        console.log('Listar Recebidas ' + u.login)
 
     daoUser.buscarUsuario(u.login, (result) => {  
 
@@ -72,7 +72,7 @@ exports.listarPergunta = (id, fnCallback) => {
     db.connect()
 
     if(mostraMsg)
-        console.log('Veio listar por ID ' + id )
+        console.log('Listar por ID ' + id )
 
     let q = Pergunta.find({_id : id})
     q.sort('-dataPergunta')
@@ -92,7 +92,7 @@ exports.salvar = (dados, fnCallback) => {
     p.dataPergunta = new Date()
      
     if(mostraMsg)
-       console.log('Veio salvar Pergunta')
+       console.log('Salvar Pergunta')
     
     p.save( (e, ret) => {
         if (e) {
@@ -119,7 +119,7 @@ exports.atualizar = (perg, fnCallback) => {
     perg.dataResposta = new Date() 
 
     if(mostraMsg)
-       console.log('Veio salvar Resposta') 
+       console.log('Salvar Resposta') 
 
     Pergunta.findByIdAndUpdate(perg._id, perg, (e, ret) => {
         if (e) {

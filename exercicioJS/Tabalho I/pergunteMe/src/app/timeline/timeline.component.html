@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col s3">
+        <div class="input-field col s12">
+            <img [src]="caminhoImagem"   class="w3-circle" width="128px" height="128px" />                                  
+        </div>  
+        <div class="input-field col s12">
+            <button class="link" routerLink='../{{usuario.login}}' (click)="carregarEsse(usuario.login)">@{{usuario.nome}} </button>
+        </div>          
+        <div class="input-field col s12">
+            {{usuario.bio}}
+        </div>  
+    </div>
+ 
+    <div class="col s9">
+        <div class="row" *ngFor="let p of perguntas">
+            <div>
+                <div class="row">
+                    <div class="col s12">
+                        Em {{p.dataPergunta | date:'dd/MM/yyyy'}} às  {{p.dataPergunta | date:'HH:mm'}},
+                        <button class="link" routerLink='../{{p.remetente.login}}' (click)="carregarEsse(p.remetente.login)"> @{{p.remetente.nome}} </button>
+                        perguntou: 
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class=" row col s12" style="text-align: center">
+                        <h4>{{p.descricao}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        Resposta Em {{p.dataResposta | date:'dd/MM/yyyy'}} às  {{p.dataResposta | date:'HH:mm'}} , 
+                        <!--button class="link" routerLink='../{{p.destinatario.login}}' (click)="carregarEsse(p.destinatario.login)"> @{{p.destinatario.nome}} </button -->
+                                 
+                    </div>    
+                </div>
+                <div class="row">
+                    
+                        <label for="login">RESPOSTA</label>   
+                    <div class=" row col s12" style="text-align: center">
+                        <h4>{{p.resposta}}</h4>
+                    </div>      
+  
+                </div>
+            </div>
+            <hr/>
+        </div>
+    </div>
+    
+</div>
